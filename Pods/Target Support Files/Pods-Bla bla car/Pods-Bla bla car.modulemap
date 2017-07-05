@@ -1,0 +1,6 @@
+framework module Pods_Bla_bla_car {
+  umbrella header "Pods-Bla bla car-umbrella.h"
+
+  export *
+  module * { export * }
+}
