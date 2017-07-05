@@ -268,21 +268,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Комментарии"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-5p-k62">
-                                <rect key="frame" x="19" y="404" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Куда поедем "/>
-                                <connections>
-                                    <action selector="toButtonPressed:" destination="PB0-iz-yvA" eventType="touchUpInside" id="5Ss-Rk-qWq"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3O3-CU-seK" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="138" width="375" height="258"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikx-R0-JIG">
-                                <rect key="frame" x="19" y="84" width="151" height="30"/>
+                                <rect key="frame" x="16" y="76" width="165" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Куда подать машину"/>
                                 <connections>
@@ -335,6 +327,9 @@
                                 <state key="normal" title="Обв. кан.">
                                     <color key="titleColor" red="0.12799578905105591" green="0.090990416705608368" blue="0.6504177451133728" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="toObvPressed:" destination="PB0-iz-yvA" eventType="touchUpInside" id="nw0-nQ-G0J"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fw7-cP-Wd3">
                                 <rect key="frame" x="286" y="487" width="46" height="43"/>
@@ -354,6 +349,14 @@
                                     <action selector="fromMskPressed:" destination="PB0-iz-yvA" eventType="touchUpInside" id="dEg-F7-c3V"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-5p-k62">
+                                <rect key="frame" x="16" y="407" width="162" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Куда поедем "/>
+                                <connections>
+                                    <action selector="toButtonPressed:" destination="PB0-iz-yvA" eventType="touchUpInside" id="5Ss-Rk-qWq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -369,7 +372,6 @@
                         <outlet property="toButton" destination="4zw-5p-k62" id="kgr-Tm-tfI"/>
                         <outlet property="toMskButton" destination="e7S-Ih-LUv" id="dxM-Az-KnS"/>
                         <outlet property="toObvButton" destination="BKO-hD-057" id="4rU-Gn-cBK"/>
-                        <outlet property="toObvPressed" destination="BKO-hD-057" id="iQT-pr-DlT"/>
                         <outlet property="toWorkButton" destination="tqk-Tg-aEg" id="yfc-jc-bz2"/>
                     </connections>
                 </viewController>

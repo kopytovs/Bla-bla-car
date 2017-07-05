@@ -123,12 +123,14 @@ class TaxiViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         self.dismiss(animated: true, completion: nil)
         let position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         if isFrom{
+            fromMarker?.map = nil
             fromMarker = GMSMarker(position: position)
             fromMarker!.title = place.name
             fromMarker!.map = googleMap
             self.fromPlace = place
             self.fromButton.titleLabel?.text = self.fromPlace.name
         } else {
+            toMarker?.map = nil
             toMarker = GMSMarker(position: position)
             toMarker!.title = place.name
             toMarker!.map = googleMap
@@ -151,7 +153,6 @@ class TaxiViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         autoCompleteController.delegate = self
         self.locationManager.startUpdatingLocation()
         self.present(autoCompleteController, animated: true, completion: nil)
-        
     }
     
     @IBAction func toButtonPressed(_ sender: Any) {
@@ -164,16 +165,54 @@ class TaxiViewController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     }
     
     @IBAction func fromWorkPressed(_ sender: Any) {
+        fromMarker?.map = nil
+        fromMarker = companyMarker
+        fromMarker!.title = "Работа"
+        fromMarker!.map = googleMap
+        self.fromPlace = companyPlace
+        self.fromButton.titleLabel?.text = self.fromPlace.name
     }
     @IBAction func fromMskPressed(_ sender: Any) {
+        fromMarker?.map = nil
+        fromMarker = mskMarker
+        fromMarker!.title = "Московские ворота"
+        fromMarker!.map = googleMap
+        self.fromPlace = mskPlace
+        self.fromButton.titleLabel?.text = self.fromPlace.name
     }
     @IBAction func fromObvPressed(_ sender: Any) {
+        fromMarker?.map = nil
+        fromMarker = obvMarker
+        fromMarker!.title = "Обводный канал"
+        fromMarker!.map = googleMap
+        self.fromPlace = obvPlace
+        self.fromButton.titleLabel?.text = self.fromPlace.name
     }
     @IBAction func toWorkPressed(_ sender: Any) {
+        toMarker?.map = nil
+        toMarker = companyMarker
+        toMarker!.title = "Работа"
+        toMarker!.map = googleMap
+        self.toPlace = companyPlace
+        self.toButton.titleLabel?.text = self.toPlace.name
     }
     @IBAction func toMskPressed(_ sender: Any) {
+        toMarker?.map = nil
+        toMarker = mskMarker
+        toMarker!.title = "Московские ворота"
+        toMarker!.map = googleMap
+        self.toPlace = mskPlace
+        self.toButton.titleLabel?.text = self.toPlace.name
     }
-    @IBOutlet weak var toObvPressed: UIButton!
+    @IBAction func toObvPressed(_ sender: Any) {
+        toMarker?.map = nil
+        toMarker = obvMarker
+        toMarker!.title = "Обводный канал"
+        toMarker!.map = googleMap
+        self.toPlace = obvPlace
+        self.toButton.titleLabel?.text = self.toPlace.name
+    }
+    
     
     
     @IBAction func timePressed(_ sender: Any) {
